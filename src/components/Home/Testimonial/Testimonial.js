@@ -1,19 +1,17 @@
 import React from 'react';
 
 const Testimonial = (props) => {
-    const {name, email, description} = props.testimonial;
+    const {name, designation, description} = props.testimonial;
     return (
-        <div className="card shadow-sm">
-            <div className="card-body">
-                <p className="card-text text-center">{description}</p>
+        <div  className="col-md-4">
+            <div style={{border: '1px solid gray'}}>
+            <div>
+                <h5>{name}</h5>
             </div>
-            <div className="card-footer d-flex  align-items-center">
-                <div>
-                    <h6 className="text-primary">{name}</h6>
-                    <p className="m-0">{email}</p>
-                </div>
+            <p>{description}</p>
+            <div></div>
             </div>
-       </div>
+        </div>
     );
 };
 

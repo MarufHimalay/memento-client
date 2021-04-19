@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { UserContext } from '../../../App';
 
 const Review = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const onSubmit = data => {
-        console.log(data);
-        const url = `http://shrouded-beach-88196.herokuapp.com/review`;
+      
+      // data.image = loggedInUser.image
+        console.log(loggedInUser);
+        const url = `http://localhost:5055/review`;
         fetch(url, {
           method: 'POST',
           headers: {
@@ -20,16 +24,19 @@ const Review = () => {
         };
         
     return (
-        <div>
-            <h1>this is review</h1>
+        <div className="container m-3 w-75">
+            <h2>Review</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-            <input name="name" defaultValue="test" {...register('name')} />
+            <input className="form-control" name="name" placeholder="Your Name" {...register('name')} />
                 <br/>
-                <input name="email" defaultValue="test" {...register('email')} />
+                <input className="form-control" name="designation" placeholder="Company's name, Designation" {...register('designation')} />
                 <br/>
-                <input name="description" defaultValue="test" {...register('description')} />
+                <input style={{height:'100px'}} className="form-control" placeholder="description" {...register('description')} />
                 <br/>
-                <input type="submit" />
+                <div  class="d-flex justify-content-end">
+                  <input className="btn btn-success d-flex justify-content-" type="submit" />
+                </div>
+                
             </form>
         </div>
     );

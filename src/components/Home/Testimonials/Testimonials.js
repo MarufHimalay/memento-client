@@ -6,7 +6,7 @@ const Testimonials = () => {
 
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch("http://shrouded-beach-88196.herokuapp.com/reviews")
+        fetch("http://localhost:5055/reviews")
         .then(res => res.json())
         .then( data => setReviews(data))
     },[])
@@ -19,7 +19,7 @@ const Testimonials = () => {
                    <h5 className="text-primary text-uppercase">Testimonial</h5>
                    <h1>What Our Patients <br/> Says </h1>
                </div>
-               <div className="card-deck mt-5">
+               <div  className="card-deck mt-5 row">
                     {
                         reviews.map(testimonial => <Testimonial testimonial={testimonial} key={testimonial.name}/>)
                     }

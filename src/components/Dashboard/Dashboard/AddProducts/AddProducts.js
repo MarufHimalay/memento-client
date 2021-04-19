@@ -31,7 +31,7 @@ const AddProducts = () => {
             status: "pending"
           };
         console.log(data);
-        const url = `http://shrouded-beach-88196.herokuapp.com/addProducts`;
+        const url = `http://localhost:5055/addProducts`;
         fetch(url, {
           method: 'POST',
           headers: {

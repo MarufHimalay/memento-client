@@ -15,20 +15,23 @@ import Review from './components/Order/Review/Review';
 import AddProducts from './components/Dashboard/Dashboard/AddProducts/AddProducts';
 import MakeAdmin from './components/Dashboard/MakeAdmin/MakeAdmin';
 import OrderOfUser from './components/Order/OrderOfUser/OrderOfUser';
+export const loggedInUserContext = createContext();
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [user, setUser] = useState({});
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <loggedInUserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <UserContext.Provider value={[user, setUser]}>
       <Router>
         <Switch>
-          <Route path="/order/:service">
+          <PrivateRoute path="/order/:service">
             <Order></Order>
-          </Route>
-          <Route path="/order">
+          </PrivateRoute>
+          <PrivateRoute path="/order">
             <Order></Order>
-          </Route>
+          </PrivateRoute>
           <Route path="/dashboard">
             <Dashboard></Dashboard>
           </Route>
@@ -55,7 +58,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </UserContext.Provider>
+      </UserContext.Provider>
+    </loggedInUserContext.Provider>
   );
 }
 
