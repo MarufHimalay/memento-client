@@ -10,21 +10,21 @@ import Order from './components/Order/Order/Order';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
-import AllCustomers from './components/AllCustomers/AllCustomers/AllCustomers';
 import Review from './components/Order/Review/Review';
 import AddProducts from './components/Dashboard/Dashboard/AddProducts/AddProducts';
 import MakeAdmin from './components/Dashboard/MakeAdmin/MakeAdmin';
 import OrderOfUser from './components/Order/OrderOfUser/OrderOfUser';
-export const loggedInUserContext = createContext();
+import AllOrders from './components/AllOrders/AllOrders';
+import Navbar from './components/Shared/NavBar/NavBar';
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [user, setUser] = useState({});
+
   return (
-    <loggedInUserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-    <UserContext.Provider value={[user, setUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
+        <Navbar></Navbar>
         <Switch>
           <PrivateRoute path="/order/:service">
             <Order></Order>
@@ -32,34 +32,33 @@ function App() {
           <PrivateRoute path="/order">
             <Order></Order>
           </PrivateRoute>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
-          </Route>
-          <Route path="/allCustomers">
-            <AllCustomers></AllCustomers>
-          </Route>
-          <Route path="/makeAdmin">
+          </PrivateRoute>
+          <PrivateRoute path="/allCustomers">
+            <AllOrders></AllOrders>
+          </PrivateRoute>
+          <PrivateRoute path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path="/orderFrom">
+          </PrivateRoute>
+          <PrivateRoute path="/orders">
            <OrderOfUser></OrderOfUser>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/review">
+          <PrivateRoute path="/review">
             <Review></Review>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route exact path="/addProducts">
+          <PrivateRoute exact path="/addProducts">
             <AddProducts></AddProducts>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
-      </UserContext.Provider>
-    </loggedInUserContext.Provider>
+    </UserContext.Provider>
   );
 }
 

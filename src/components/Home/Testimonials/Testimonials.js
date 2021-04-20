@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import Testimonial from '../Testimonial/Testimonial';
-import './Testimonials.css';
+// import './Testimonials.css';
 
 const Testimonials = () => {
 
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5055/reviews")
+        fetch("https://shrouded-beach-88196.herokuapp.com/reviews")
         .then(res => res.json())
         .then( data => setReviews(data))
     },[])
 
 
     return (
-       <section className="testimonials my-5 py-5">
+       <section className="testimonials my-5 py-3">
            <div className="container">
-               <div className="section-header">
+               <div className="text-center section-header">
                    <h5 className="text-primary text-uppercase">Testimonial</h5>
-                   <h1>What Our Patients <br/> Says </h1>
+                   <h1>What Our Customers <br/> Says </h1>
                </div>
-               <div  className="card-deck mt-5 row">
+               <div  className="card-deck mt-5 d-flex justify-content-center row">
                     {
                         reviews.map(testimonial => <Testimonial testimonial={testimonial} key={testimonial.name}/>)
                     }

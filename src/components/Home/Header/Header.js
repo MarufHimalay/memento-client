@@ -6,7 +6,6 @@ import HeaderMain from '../HeaderMain/HeaderMain';
 const Header = () => {
     return (
         <div>
-            <Navbar></Navbar>
             <HeaderMain></HeaderMain>
             <BusinessInfo></BusinessInfo>
         </div>

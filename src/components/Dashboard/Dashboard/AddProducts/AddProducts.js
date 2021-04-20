@@ -26,12 +26,13 @@ const AddProducts = () => {
     const onSubmit = data => {
         const productData = {
             name: data.name,
+            price: data.price,
             image: imageURL,
             description: data.description,
             status: "pending"
           };
         console.log(data);
-        const url = `http://localhost:5055/addProducts`;
+        const url = `https://shrouded-beach-88196.herokuapp.com/addProducts`;
         fetch(url, {
           method: 'POST',
           headers: {
@@ -46,14 +47,14 @@ const AddProducts = () => {
       };
     return (
         <div>
-            <h1>this is order form</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <h1>Add Services Here</h1>
+            <form className="w-75" onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
-      <input defaultValue="maruf" {...register("name", { required: true })} />
-      <input defaultValue="description description" {...register("description", { required: true })} />
-      <input defaultValue="$120" {...register("price", { required: true })} />
-      <input style={{textColor:"lightGreen"}} name="images" type="file" onChange={handleImageUpload} />
-      <input type="submit" />
+      <input className="form-control mt-2" placeholder="Product Title" {...register("name", { required: true })} />
+      <input className="form-control mt-2" placeholder="Product Description" {...register("description", { required: true })} />
+      <input className="form-control mt-2" placeholder="$120" {...register("price", { required: true })} />
+      <input className="form-control mt-2" style={{textColor:"lightGreen"}} name="images" type="file" onChange={handleImageUpload} />
+      <input className="btn btn-success mt-2" type="submit" />
     </form>
         </div>
     );

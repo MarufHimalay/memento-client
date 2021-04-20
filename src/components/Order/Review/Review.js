@@ -5,11 +5,13 @@ import { UserContext } from '../../../App';
 const Review = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(loggedInUser);
     const onSubmit = data => {
+      data.image = loggedInUser.image;
       
-      // data.image = loggedInUser.image
+      //  data.image = loggedInUser.image
         console.log(loggedInUser);
-        const url = `http://localhost:5055/review`;
+        const url = `https://shrouded-beach-88196.herokuapp.com/review`;
         fetch(url, {
           method: 'POST',
           headers: {

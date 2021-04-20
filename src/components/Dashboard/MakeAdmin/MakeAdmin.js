@@ -7,7 +7,7 @@ const MakeAdmin = () => {
     const onSubmit = (data) => {
         data.roll = "admin";
         console.log(data);
-        fetch("http://localhost:5055/makeAdmin", {
+        fetch("https://shrouded-beach-88196.herokuapp.com/makeAdmin", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -20,10 +20,8 @@ const MakeAdmin = () => {
             })
     }
     return (
-        <div className="row">
-            <div className="col-md-4">
-                <Sidebar></Sidebar>
-            </div>
+        <div className="row container">
+            
             <div className="col-md-8 mt-5">
                 <h3>Email</h3>
                 <form className=" w-75"onSubmit={handleSubmit(onSubmit)}>

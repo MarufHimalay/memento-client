@@ -12,7 +12,8 @@ const OrderForm = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => {
     console.log(data);
-    const url = `http://localhost:5055/addOrders`;
+    data.status = "pending";
+    const url = `https://shrouded-beach-88196.herokuapp.com/addOrders`;
     fetch(url, {
       method: 'POST',
       headers: {

@@ -18,8 +18,7 @@ const Order = () => {
   }
   const { service } = useParams();
   return (
-    <div className="container">
-      <Navbar></Navbar>
+    <div className="container mt-4">
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
         <Row>
           <Col sm={3}>

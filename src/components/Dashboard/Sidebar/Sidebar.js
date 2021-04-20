@@ -19,10 +19,15 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                         </Link>
                     </li>
-                    {(loggedInUser.role === "admin") & <div>
+                    {(loggedInUser.role === "admin") && <div>
                         <li>
                             <Link to="/allCustomers" className="text-white">
                                 <FontAwesomeIcon icon={faCalendar} /> <span>Orders</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/addProducts" className="text-white">
+                                <FontAwesomeIcon icon={faCalendar} /> <span>Add Service</span>
                             </Link>
                         </li>
                         <li>
@@ -38,7 +43,7 @@ const Sidebar = () => {
 
 
                     </div>}
-                   {(loggedInUser.role === "user") &  <div>
+                   {(loggedInUser.role === "user") &&  <div>
                         <li>
                             <Link to="/orderForm" className="text-white">
                                 <FontAwesomeIcon icon={faUser} /> <span>Book Order</span>
@@ -51,7 +56,7 @@ const Sidebar = () => {
                         </li>
                         <li>
                             <Link to="/review" className="text-white">
-                                <FontAwesomeIcon icon={faUser} /> <span>Booking List</span>
+                                <FontAwesomeIcon icon={faUser} /> <span>Review</span>
                             </Link>
                         </li>
                     </div>}

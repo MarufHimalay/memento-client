@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { useContext } from 'react';
 import { UserContext } from '../../../App';
-import jwt_decode from "jwt-decode";
+
 
 const PrivateRoute = ({children, ...rest}) => {
-  const [user, setUser] = useContext(UserContext)
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
       <Route
     {...rest}
     render={({ location }) =>
-      user.email ? (
+    loggedInUser.email ? (
         children
       ) : (
         <Redirect
