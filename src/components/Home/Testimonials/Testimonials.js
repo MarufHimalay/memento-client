@@ -13,11 +13,11 @@ const Testimonials = () => {
 
 
     return (
-       <section className="testimonials my-5 py-3">
+       <section style={{backgroundColor:""}} className="testimonials py-5">
            <div className="container">
                <div className="text-center section-header">
-                   <h5 className="text-primary text-uppercase">Testimonial</h5>
-                   <h1>What Our Customers <br/> Says </h1>
+                   <h5 style={{color:"#FFD700"}} className=" text-uppercase">Testimonial</h5>
+                   <h2 style={{color:"#FF1493"}} >What Our Customers <br/> Says </h2>
                </div>
                <div  className="card-deck mt-5 d-flex justify-content-center row">
                     {

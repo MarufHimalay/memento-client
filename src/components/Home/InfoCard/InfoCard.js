@@ -1,19 +1,21 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './InfoCard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './infoCard.css'
 
 
 const InfoCard = ({ info }) => {
     return (
-        <div className="col-md-4 text-white info-card">
-            <div className={`d-flex justify-content-center info-container  m-2 info-${info.background}`}>
-                <div className="mr-3">
-                    {/* <FontAwesomeIcon className="info-icon" icon={info.icon}></FontAwesomeIcon> */}
+        <div id="info" className="col-md-4 text-white info-card">
+            <div>
+            <div style={{backgroundColor:`${info.background}`}} className={`d-flex justify-content-center info-container p-3  m-2`}>
+                <div className="">
+                    <FontAwesomeIcon className="info-icon" icon={info.icon}></FontAwesomeIcon>
                 </div>
                 <div>
                     <h6>{info.title}</h6>
                     <small>{info.description}</small>
                 </div>
+            </div>
             </div>
         </div>
     );

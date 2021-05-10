@@ -1,27 +1,18 @@
 import React from 'react';
 
 const Testimonial = (props) => {
-    const { name,  description, image, designation } = props.testimonial;
+    const { name, description, image, designation } = props.testimonial;
     return (
-        // <div classNameName="col-md-4">
-        //     <div classNameName="p-2 m-2" style={{border: '2px solid gray', borderRadius:"5px"}}>
-        //     <div>
-        //         <h5>{name}</h5>
-        //     </div>
-        //     <p>{description}</p>
-        //     <div></div>
-        //     </div>
-        // </div>
-        <div className="card  m-2" style={{maxWidth:" 400px"}}>
-            <div className="row align-items-center g-0">
-                <div className="col-md-4 ">
-                    <img src={image} alt="..." />
+        <div id="testimonial" className="card  m-2" style={{ maxWidth: " 400px", backgroundColor: "", border: "3px dashed #FF1493" }}>
+            <div className="  g-0">
+                <div className="d-flex justify-content-center pt-2" >
+                    <img style={{ borderRadius: "50%" }} src={image} alt="..." />
                 </div>
-                <div className="col-md-8">
-                    <div className="card-body">
-                        <h3 className="card-title">{name}</h3>
+                <div style={{ backgroundColor: "" }} >
+                    <div className="card-body  ">
+                        <h3 style={{backgroundColor: "black", width:"100%"}} className="text-white ps-2">{name}</h3>
                         <small>{designation}</small>
-                        <p style={{border:"1px solid gray"}} className="card-text p-1">{description}</p>
+                        <p style={{ borderTop: "1px solid black" }} className="card-text p-1">{description}</p>
                         <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>

@@ -6,23 +6,23 @@ import { UserContext } from '../../../App';
 const Navbar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
-    <div className="container text-center">
-      <nav className="navbar navbar-expand-lg navbar-light bg-primary bg-gradient">
+    <div style={{backgroundColor: '	#1F1F1F'}} className="text-center">
+      <nav  className="container navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <Link style={{ color: 'white', fontWeight: '700' }} className="navbar-brand fs-2" to="#">Memento</Link>
+          <Link style={{ color: 'white', fontWeight: '700', fontFamily: "cursive" }} className="navbar-brand fs-2" to="#">Memento</Link>
           <Button style={{ color: 'white'}} className="navbar-toggler" type="Button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </Button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link ms-3 active" aria-current="page" to="/">Home</Link>
+                <Link style={{ color: 'white'}} className="nav-link ms-3 active" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link ms-3" to="/dashboard">Dashboard</Link>
+                <Link style={{ color: 'white'}} className="nav-link ms-3 active" to="/dashboard">Dashboard</Link>
               </li>
               {!loggedInUser.email && <li className="nav-item">
-                <Button style={{ color: "white" }} as={Link} className="nav-link ms-3 btn btn-success" to="/login">Login</Button>
+                <Button style={{backgroundColor:"#FF00FF", border:"none", color:'white'}} as={Link} className="nav-link ms-3" to="/login">Login</Button>
               </li>}
             </ul>
           </div>

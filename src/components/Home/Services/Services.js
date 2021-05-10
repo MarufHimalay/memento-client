@@ -11,13 +11,13 @@ const Services = () => {
     },[])
     console.log(products);
     return (
-        <section className="services-container mt-5">
+        <section style={{backgroundColor:"#FAFAFB"}} className="services-container pb-5 pt-5">
             <div className="text-center">
-                <h5 style={{color:"tomato"}}>OUR SERVICES</h5>
-                <h2>Services We Provide</h2>
+                <h4 style={{color:"#FFD700"}}>OUR SERVICES</h4>
+                <h2 style={{color:"#FF1493"}}>Services We Provide</h2>
             </div>
             <div className="d-flex justify-content-center">
-            <div className="w-75 row mt-5 pt-5">
+            <div className="w-75 row mt-3 pt-3">
                 {
                     products.map(products => <ServiceDetail products={products} key={products.name}></ServiceDetail>)
                 }

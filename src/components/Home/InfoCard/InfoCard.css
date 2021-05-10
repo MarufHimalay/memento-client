@@ -1,16 +1,10 @@
 .info-card{
-    padding: 0 5px;
+    width:300px;
 }
-.info-primary{
-    background-color: #155a2c;
+.info-icon {
+    font-size:40px;
+    margin-right: 10px;
 }
-.info-dark{
-    background-color:#31426d;
-}
-.info-container{
-    height: 100px;
-    padding:30px;
-}
-.info-icon{
-    font-size: 3em;
+.info-card:hover{
+    transform:scale(1.1)
 }

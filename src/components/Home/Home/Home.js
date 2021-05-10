@@ -4,6 +4,7 @@ import Testimonials from '../Testimonials/Testimonials';
 import Header from '../Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import FeaturedService from '../FeaturedService/FeaturedService';
+import Subscribe from '../Subscribe/Subscribe';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
            <Services></Services>
            <FeaturedService></FeaturedService>
            <Testimonials></Testimonials>
+           <Subscribe></Subscribe>
            <Footer></Footer>
         </div>
     );

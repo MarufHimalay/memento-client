@@ -1,21 +1,19 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import banner from '../../../images/banner.jpg'
-
+import './HeaderMain.css'
 const HeaderMain = () => {
     return (
-        <main style={{height:'600px'}} className="row d-flex align-items-center m-3">
-            <div className="col-md-4 offset-md-1">
-                <h1 style={{color: '#3A4256'}}>Capture your <br/> Smiles</h1>
-                <p className="text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore eveniet necessitatibus et iusto corrupti minima.</p>
-                {/* <button className="btn btn-primary"></button> */}
-                <Button as={Link} to="/order" className="btn btn-primary">Order Now</Button>
+        <div id="header" style={{ height: '600px' }} className=" d-flex  justify-content-center align-items-center">
+            <div className="text-center">
+                <h4 className="text-white">WEDDING</h4>
+                <h1 style={{color:"#FF1493",  border: "5px dashed #FF69B4", padding:"5px"}}>Capture your moments with us</h1>
+                <br/>
+                <Button style={{backgroundColor:"#FF69B4", border:"none"}} as={Link} to="/order" className="btn">Get Started</Button>
             </div>
-            <div className="col-md-6">
-                <img src={banner} alt="" className="img-fluid"/>
-            </div>
-        </main>
+
+        </div>
     );
 };
 
